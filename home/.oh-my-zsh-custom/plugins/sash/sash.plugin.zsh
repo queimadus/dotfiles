@@ -32,4 +32,5 @@ function _sash {
   esac
 }
 
+source $(dirname $0)/bash_compatibility.sh
 complete -F _sash sash
