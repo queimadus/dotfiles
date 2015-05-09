@@ -202,3 +202,5 @@ function sash_bash {
   
   (set -x; ssh -i ~/.ssh/$pem.pem ${users[$idx-1]}@$ip $*)
 }
+
+sash_bash $@

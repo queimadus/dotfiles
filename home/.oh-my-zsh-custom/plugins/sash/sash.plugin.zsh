@@ -1,6 +1,5 @@
 function sash {
-  source ./sash_bash
-  sash_bash $@
+  $(dirname $0)/sash_bash $@
 }
 
 # autocomplete
