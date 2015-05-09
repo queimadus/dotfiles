@@ -35,5 +35,5 @@ alias airdropdown='sudo ifconfig awdl0 down'
 alias airdropup='sudo ifconfig awdl0 up'
 alias vimw='vim $(which $1)'
 
-alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/aliases.zsh"
+alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/my-aliases.plugin.zsh"
 alias vimfunctions="vim $ZSH_CUSTOM/lib/functions.zsh"
