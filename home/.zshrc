@@ -23,7 +23,7 @@ alias ls='ls --color=auto -ph'
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
-export VISUAL=/usr/local/bin/vim
+export VISUAL=$(which vim)
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
