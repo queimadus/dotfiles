@@ -11,13 +11,15 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="true"
 COMPLETION_WAITING_DOTS="true"
 
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-plugins=(git brew autojump colored-man sbt docker aws node npm zsh_reload fancy-ctrl-z sash)
+plugins=(git brew autojump colored-man sbt docker aws node npm zsh_reload fancy-ctrl-z 
+         sash common-aliases my-aliases)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+alias ls='ls --color=auto -ph'
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export LANG=en_US.UTF-8
 export EDITOR='vim'

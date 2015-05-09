@@ -1,5 +1,4 @@
-#alias ls='ls -Gph'
-alias sl=ls # often screw this up
+alias sl=ls
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
 
 alias afind='ack-grep -il'
@@ -32,10 +31,9 @@ alias uttunnel='echo http://localhost:7889/gui; sshtunnel 7889 localhost 8080 ho
 alias psg='ps aux | grep'
 alias rvisualvm='jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi'
 alias sbtdebug='sbt "set Revolver.enableDebugging(port = 5005, suspend = true)"'
-alias tailf='tail -f'
 alias airdropdown='sudo ifconfig awdl0 down'
 alias airdropup='sudo ifconfig awdl0 up'
 alias vimw='vim $(which $1)'
 
-alias vimaliases="vim ~/.oh-my-zsh/lib/aliases.zsh"
-alias vimfunctions="vim ~/.oh-my-zsh/lib/functions.zsh"
+alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/aliases.zsh"
+alias vimfunctions="vim $ZSH_CUSTOM/lib/functions.zsh"
