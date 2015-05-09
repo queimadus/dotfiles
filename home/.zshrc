@@ -14,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 plugins=(git brew autojump colored-man sbt docker aws node npm zsh_reload fancy-ctrl-z 
-         sash common-aliases my-aliases)
+         sash common-aliases my-aliases extract mosh)
 
 source $ZSH/oh-my-zsh.sh
 
