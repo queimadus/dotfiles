@@ -1,14 +1,11 @@
 set clipboard=unnamed
 let g:indent_guides_enable_on_vim_startup = 0
 set nolist
-"let g:airline_theme = 'wombat'
-"hi PmenuSel ctermbg=0
 let g:airline_theme = 'solarized'
 let g:solarized_termcolors = 256
 set nospell
 set noerrorbells visualbell t_vb= " don't beep
 set shiftwidth=2
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 autocmd GUIEnter * set visualbell t_vb="
 
 set pastetoggle=<F2>
@@ -67,6 +64,7 @@ set tabstop=2
 set expandtab
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
+hi LineNr ctermfg=10 
 let g:airline#extensions#whitespace#checks = []
 
 nnoremap <Leader>o :CtrlP<CR>
