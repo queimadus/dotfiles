@@ -16,6 +16,10 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 plugins=(git brew autojump colored-man sbt docker aws node npm zsh_reload fancy-ctrl-z 
          sash common-aliases my-aliases extract mosh)
 
+# Homeshick
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -25,10 +29,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
 export VISUAL=$(which vim)
-
-# Homeshick
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
