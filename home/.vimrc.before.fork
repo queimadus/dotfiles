@@ -6,6 +6,7 @@ let g:airline_powerline_fonts = 1
 let g:spf13_bundle_groups=['writing','neocomplete','programming','php','python','javascript','html','scala','misc']
 let g:solarized_termtrans = 0
 let g:spf13_no_fastTabs = 1
+let g:spf13_noninvasive_completion = 1
 
 if ! has('gui_running')
   set ttimeoutlen=10

@@ -74,6 +74,11 @@ vmap ( S(
 vmap { S{
 vmap [ S[
 
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
+
 vmap v <Plug>(expand_region_expand)
 vmap V <Plug>(expand_region_shrink)
 vnoremap <silent> y y`]
