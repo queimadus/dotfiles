@@ -39,3 +39,5 @@ alias vimw='vim $(which $1)'
 
 alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/my-aliases.plugin.zsh"
 alias vimfunctions="vim $ZSH_CUSTOM/lib/functions.zsh"
+alias vimrc='vim $HOME/.vimrc.fork'
+alias vimrcbefore='vim $HOME/.vimrc.before.fork'
