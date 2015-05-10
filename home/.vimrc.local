@@ -1,0 +1,86 @@
+set clipboard=unnamed
+let g:indent_guides_enable_on_vim_startup = 0
+set nolist
+"let g:airline_theme = 'wombat'
+"hi PmenuSel ctermbg=0
+let g:airline_theme = 'solarized'
+let g:solarized_termcolors = 256
+set nospell
+set noerrorbells visualbell t_vb= " don't beep
+set shiftwidth=2
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd GUIEnter * set visualbell t_vb="
+
+set pastetoggle=<F2>
+
+nmap <Leader>& :let @/ = ""<CR>
+nmap <leader>T :enew<cr>
+
+"Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp! <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+nmap <leader>1 :b 1<CR>
+nmap <leader>2 :b 2<CR>
+nmap <leader>3 :b 3<CR>
+nmap <leader>4 :b 4<CR>
+nmap <leader>5 :b 5<CR>
+nmap <leader>6 :b 6<CR>
+nmap <leader>7 :b 7<CR>
+nmap <leader>8 :b 8<CR>
+nmap <leader>9 :b 9<CR>
+
+set autoread                    "Reload files changed outside vim
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
+let g:airline#extensions#whitespace#checks = []
+
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+vmap " S"
+vmap ( S(
+vmap { S{
+vmap [ S[
+
+vmap v <Plug>(expand_region_expand)
+vmap V <Plug>(expand_region_shrink)
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+au BufNewFile,BufRead *.conf set filetype=conf
+

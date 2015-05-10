@@ -1,0 +1,18 @@
+set enc=utf-8
+set shell=/bin/zsh
+scriptencoding utf-8
+set encoding=utf-8
+let g:airline_powerline_fonts = 1
+let g:spf13_bundle_groups=['general','writing','neocomplete','programming','php','python','javascript','html','scala','misc']
+let g:solarized_termtrans = 0
+let g:spf13_no_fastTabs = 1
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
