@@ -5,6 +5,9 @@ alias afind='ack-grep -il'
 alias hi='highlight'
 
 alias -g C='| pbcopy'
+alias -g X='| xargs -I{}'
+
+alias tailf='tail -f'
 
 alias gua='git checkout -- .'
 alias gst='git status -s'
