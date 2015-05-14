@@ -34,7 +34,6 @@ alias sbt='sbt -Dscala.color'
 
 alias uttunnel='echo http://localhost:7889/gui; sshtunnel 7889 localhost 8080 home'
 alias psg='ps aux | grep'
-alias rvisualvm='jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi'
 alias sbtdebug='sbt "set Revolver.enableDebugging(port = 5005, suspend = true)"'
 alias airdropdown='sudo ifconfig awdl0 down'
 alias airdropup='sudo ifconfig awdl0 up'

@@ -80,3 +80,8 @@ function unbk() {
   newname=$(echo "$1" | sed -En 's/(.*)(\.bk$)/\1/p')
   mv "$1" "$newname"
 }
+
+function rvisualvm() {
+  jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi
+}
+
