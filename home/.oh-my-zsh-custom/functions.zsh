@@ -82,6 +82,6 @@ function unbk() {
 }
 
 function rvisualvm() {
-  jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi
+  jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi &
 }
 
