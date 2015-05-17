@@ -10,4 +10,6 @@ $HOME/.homesick/repos/dotfiles/init.sh
 ```
 
 # Fast Install
+```
 curl https://brunomaia.eu/dotfiles -k -L -o - | sh
+```
