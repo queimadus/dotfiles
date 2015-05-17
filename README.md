@@ -1,5 +1,5 @@
 # dotfiles
-Daily zsh, vim and osx related dotfiles
+Daily zsh and vim related dotfiles
 
 # Install
 ```bash
@@ -9,3 +9,5 @@ $HOME/.homesick/repos/homeshick/bin/homeshick clone queimadus/dotfiles
 $HOME/.homesick/repos/dotfiles/init.sh
 ```
 
+# Fast Install
+curl https://brunomaia.eu/dotfiles -k -L -o - | sh
