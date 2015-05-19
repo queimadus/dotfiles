@@ -1,5 +1,7 @@
+local localdir="$(dirname "$0")"
+
 function sash {
-  $(dirname $0)/sash_bash $@
+  $localdir/sash_bash $@
 }
 
 # autocomplete
