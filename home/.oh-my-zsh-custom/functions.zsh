@@ -1,4 +1,5 @@
 function setjdk() {
+  if [[ "$OSTYPE" = darwin* ]]; then
     if [ $# -ne 0 ]; then
         removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
         if [ -n "${JAVA_HOME+x}" ]; then
@@ -7,6 +8,7 @@ function setjdk() {
         export JAVA_HOME=`/usr/libexec/java_home -v $@`
         export PATH=$JAVA_HOME/bin:$PATH
     fi
+  fi
 }
 
 function removeFromPath() {
