@@ -6,6 +6,8 @@ alias hi='highlight'
 
 alias -g C='| pbcopy'
 alias -g X='| xargs -I{}'
+alias -g J='| jq "."'
+alias -g Jq='| jq'
 
 alias tailf='tail -f'
 
@@ -43,3 +45,7 @@ alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/my-aliases.plugin.zsh"
 alias vimfunctions="vim $ZSH_CUSTOM/functions.zsh"
 alias vimrc='vim $HOME/.vimrc.fork'
 alias vimrcbefore='vim $HOME/.vimrc.before.fork'
+
+alias vpn='ssh -Nn -D 1080'
+
+alias gitcleanbranches='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'

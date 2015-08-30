@@ -42,11 +42,19 @@ unbindports() {
 }
 
 rmqlisten() {
-  unbuffer amqp-spy -H $1 -P $2 --format json $3 $4 | jq --unbuffered '.message' | sed -l 's/\\//g' | sed -l 's/^.\(.*\).$/\1/' | jq "."
+  unbuffer amqp-spy -H $1 -P $2 --format message $3 $4
+}
+
+rmqlistenJ() {
+  rmqlisten | jq "."
 }
 
 sshtunnel() {
   ssh -L $1:$2:$3 $4 -N
+}
+
+sshfwd() {
+  ssh -L $1:"localhost":$2 $3 -N
 }
 
 ssht() {
@@ -59,7 +67,7 @@ function clear_sash {
 
 function exportaws() {
   if [[ -n $1 ]]; then
-    creds=$(grep -A 3 "\[profile $1\]" ~/.aws/config)
+    creds=$(grep -A 3 "\[$1\]" ~/.aws/credentials)
     access=$(echo $creds | sed -En 's/aws_access_key_id = (.*)$/\1/gp')
     secret=$(echo $creds | sed -En 's/aws_secret_access_key = (.*)$/\1/gp')
     export AWS_ACCESS_KEY_ID=$access
@@ -85,5 +93,13 @@ function unbk() {
 
 function rvisualvm() {
   jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi &
+}
+
+function aag() {
+  ag --nogroup $@ $(pwd)
+}
+
+function vwhich() {
+ vim "$(which $1)"
 }
 
