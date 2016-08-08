@@ -29,6 +29,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
 export VISUAL=$(which vim)
+export PYTHONPATH=/Library/Python/2.7/site-packages
 
 # Misc
 setjdk 1.8
+
+ulimit -n 65536
+ulimit -u 2048
