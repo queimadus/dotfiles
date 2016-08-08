@@ -121,3 +121,9 @@ function retry {
   }
   return 0
 }
+
+function loadnvm () {
+  export NVM_DIR="$HOME/.nvm"
+  . "$(brew --prefix nvm)/nvm.sh"
+}
+
