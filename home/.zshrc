@@ -14,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 plugins=(git brew autojump colored-man sbt docker aws node npm zsh_reload fancy-ctrl-z 
-         sash common-aliases my-aliases extract mosh)
+         common-aliases my-aliases extract)
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
@@ -36,3 +36,4 @@ setjdk 1.8
 
 ulimit -n 65536
 ulimit -u 2048
+
