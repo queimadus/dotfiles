@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-plugins=(git brew autojump colored-man sbt docker aws zsh_reload fancy-ctrl-z 
+plugins=(git brew autojump colored-man sbt docker aws-lite zsh_reload fancy-ctrl-z 
          common-aliases my-aliases extract)
 
 # Homeshick
