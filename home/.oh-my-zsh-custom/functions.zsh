@@ -42,7 +42,7 @@ unbindports() {
 }
 
 rmqlisten() {
-  unbuffer amqp-spy -H $1 -P $2 --format message $3 $4
+  unbuffer amqp-spy -H $1 -P $2 --format message $3 $4 ${@:5}
 }
 
 rmqlistenJ() {
@@ -92,7 +92,8 @@ function unbk() {
 }
 
 function rvisualvm() {
-  jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://$1/jmxrmi &
+  url=$(echo "$1" | sed -E "s/(^http:\/\/)?(.*[^\/])(\/$)?/\2/")
+  jvisualvm --nosplash --openjmx service:jmx:rmi:///jndi/rmi://"$url"/jmxrmi &
 }
 
 function aag() {
