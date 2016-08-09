@@ -129,17 +129,26 @@ prompt_virtualenv() {
   fi
 }
 
-## Main prompt
-build_prompt() {
-  RETVAL=$?
-  prompt_start
-  prompt_virtualenv
-  prompt_context
-  prompt_dir
-  prompt_git
-  prompt_end
+function zle-line-finish {
+  prepare
+  zle reset-prompt
+  zle -R
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT=$(prompt_segment white black '[%*]')
+prepare() {
+  ## Main prompt
+	build_prompt() {
+		RETVAL=$?
+		prompt_start
+		prompt_virtualenv
+		prompt_context
+		prompt_dir
+		prompt_git
+		prompt_end
+	}
 
+	PROMPT='%{%f%b%k%}$(build_prompt) '
+	RPROMPT=$(prompt_segment white black '[%*]')
+}
+
+prepare
