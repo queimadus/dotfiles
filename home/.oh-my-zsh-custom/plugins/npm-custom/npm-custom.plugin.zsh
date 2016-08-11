@@ -11,7 +11,14 @@ function _scripts () {
 compdef _scripts npm run
 
 # npm autocomplete 
-source /usr/local/etc/bash_completion.d/npm
+if [[ -e /usr/local/etc/bash_completion.d/npm ]]; then
+  source /usr/local/etc/bash_completion.d/npm
+else
+  if which npm &> /dev/null ; then 
+    echo 'run "npm completion > /usr/local/etc/bash_completion.d/npm" to install npm completion'
+    eval "$(npm completion 2>/dev/null)"
+  fi
+fi
 
 # Install dependencies globally
 alias npmg="npm i -g "
