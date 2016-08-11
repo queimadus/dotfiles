@@ -1,6 +1,8 @@
 # npm run autocomplete
 function _scripts () {
-  compls=$([[ -s $PWD/package.json ]] || return 0 && cat package.json | tr -d " \t\n\r" | grep -oE 'scripts\"\:\{(.*?)\}' | sed -e "s/scripts\"\://g" | sed -e "s/{//g" | grep -oE '\"[^\"]+\":' | sed -e 's/\"//g' | sed -e 's/\://g' | sed -e 's/\,//g' | sort)
+  compls=$([[ -s $PWD/package.json ]] || return 0 && cat package.json | tr -d " \t\n\r" | \
+    grep -oE 'scripts\"\:\{(.*?)\}' | sed -e "s/scripts\"\://g" | sed -e "s/{//g" | \
+    grep -oE '\"[^\"]+\":' | sed -e 's/\"//g' | sed -e 's/\://g' | sed -e 's/\,//g' | sort)
 
   completions=(${=compls})
   compadd -- $completions
