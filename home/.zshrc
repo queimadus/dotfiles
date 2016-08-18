@@ -33,6 +33,9 @@ export PYTHONPATH=/Library/Python/2.7/site-packages
 
 # Misc
 setjdk 1.8
+if [[ -e "$HOME/.zshrc-custom" ]]; then
+  source "$HOME/.zshrc-custom"
+fi
 
 ulimit -n 65536
 ulimit -u 2048
