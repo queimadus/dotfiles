@@ -48,4 +48,7 @@ alias vimrcbefore='vim $HOME/.vimrc.before.fork'
 
 alias vpn='ssh -Nn -D 1080'
 
+alias ccurl='curl -b /tmp/cookie_store -c /tmp/cookie_store'
+alias ccurlclear="rm -f /tmp/cookie_store"
+alias ccurlcat="cat /tmp/cookie_store | tail -n +5"
 alias gitcleanbranches='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
