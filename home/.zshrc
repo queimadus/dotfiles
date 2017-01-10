@@ -1,5 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
+script_start=`gdate +%s.%3N`
+
 ZSH_THEME="bruno"
 DEFAULT_USER="bruno"
 
@@ -39,4 +41,7 @@ fi
 
 ulimit -n 65536
 ulimit -u 2048
+
+script_end=`gdate +%s.%3N`
+export INIT_TIME=$(echo "scale=3; a=($script_end-$script_start)*1000; scale=0; a/1" | bc)
 
