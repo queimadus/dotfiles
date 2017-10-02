@@ -40,6 +40,7 @@ alias sbtdebug='sbt "set Revolver.enableDebugging(port = 5005, suspend = true)"'
 alias airdropdown='sudo ifconfig awdl0 down'
 alias airdropup='sudo ifconfig awdl0 up'
 alias vimw='vim $(which $1)'
+alias vimf='vim $(fzf)'
 
 alias vimaliases="vim $ZSH_CUSTOM/plugins/my-aliases/my-aliases.plugin.zsh"
 alias vimfunctions="vim $ZSH_CUSTOM/functions.zsh"
@@ -47,6 +48,8 @@ alias vimrc='vim $HOME/.vimrc.fork'
 alias vimrcbefore='vim $HOME/.vimrc.before.fork'
 
 alias vpn='ssh -Nn -D 1080'
+
+alias curltime='curl -w "\n%{time_total}"'
 
 alias ccurl='curl -b /tmp/cookie_store -c /tmp/cookie_store'
 alias ccurlclear="rm -f /tmp/cookie_store"

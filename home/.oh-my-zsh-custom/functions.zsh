@@ -100,6 +100,10 @@ function aag() {
   ag --nogroup $@ $(pwd)
 }
 
+function cdf() {
+  cd $(dirname "$1")
+}
+
 function vwhich() {
  vim "$(which $1)"
 }
