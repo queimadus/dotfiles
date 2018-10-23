@@ -5,7 +5,7 @@ alias afind='ack-grep -il'
 alias hi='highlight'
 
 alias -g C='| pbcopy'
-alias -g X='| xargs -I{}'
+alias -g X='| xargs -I{} sh -c'
 alias -g J='| jq "."'
 alias -g Jq='| jq'
 
