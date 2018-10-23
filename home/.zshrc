@@ -48,6 +48,6 @@ export FZF_CTRL_R_OPTS="--sort"
 # nvm fast load default node
 NODE_VERSION=`cat ~/.nvm/alias/default`
 NVM_NODE_DIR=`dirname ~/.nvm/versions/node`
-export PATH="$PATH:$NVM_NODE_DIR/node/v$NODE_VERSION/bin"
+export PATH="$NVM_NODE_DIR/node/v$NODE_VERSION/bin:$PATH"
 
 export ANDROID_HOME=/usr/local/Cellar/android-sdk
