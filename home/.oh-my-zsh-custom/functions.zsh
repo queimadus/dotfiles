@@ -134,3 +134,7 @@ function nvm () {
   nvm "$@"
 }
 
+function loop {
+  while true; do echo $($@); echo; sleep 1; done
+}
+
