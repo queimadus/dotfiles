@@ -50,5 +50,9 @@ NODE_VERSION=`cat ~/.nvm/alias/default`
 NVM_NODE_DIR=`dirname ~/.nvm/versions/node`
 export PATH="$NVM_NODE_DIR/node/v$NODE_VERSION/bin:$PATH"
 
+# ruby
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+
 export ANDROID_HOME=/usr/local/Cellar/android-sdk
 export GOPATH=$HOME/go
