@@ -17,7 +17,7 @@ prompt_segment() {
   if [[ $CURRENT_BG == 'NONE' || $4 == 1 ]]; then
     echo -n "%{$bg%}%{$fg%}"
   else
-    echo -n " %{$bg%F{$CURRENT_BG}%}%{$fg%}" 
+    echo -n "%{$bg%F{$CURRENT_BG}%}%{$fg%}" 
   fi
   CURRENT_BG=$1
   [[ -n $3 ]] && echo -n $3
@@ -26,21 +26,25 @@ prompt_segment() {
 prompt_start() {
   #prompt_segment yellow black '['
   if [[ $VI_MODE == "[n]" ]]; then
-    prompt_segment magenta black '['
+    prompt_segment magenta black ''
   else
-    prompt_segment yellow black '['
+    prompt_segment yellow black ''
   fi
 }
 
 # End the prompt, closing any open segments
 prompt_end() {
 
+  echo -n "%{%K{NONE}%} "
+
   local sts
   if [[ $RETVAL -ne 0 ]]; then 
-    sts="]%{%F{red}%}$"
+    prompt_segment red black "[%*]\n"
+    sts="%{%F{red}%}>"
   else
     #sts="]$"
-    sts="]%{%F{yellow}%}$"
+    prompt_segment yellow black "[%*]\n"
+    sts="%{%F{green}%}>"
   fi
 
   if [[ $VI_MODE == "[n]" ]]; then
@@ -107,7 +111,7 @@ prompt_git() {
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats '%u%c'
     vcs_info
-    echo -n "${ref/refs\/heads\// }${vcs_info_msg_0_%% }$wip_msg${mode}"
+    echo -n " ${ref/refs\/heads\// }${vcs_info_msg_0_%% }$wip_msg${mode}"
   fi
 }
 
@@ -139,7 +143,7 @@ prepare() {
   ## Main prompt
 	build_prompt() {
 		RETVAL=$?
-		prompt_start
+    #prompt_start
 		prompt_virtualenv
 		prompt_context
 		prompt_dir
@@ -148,7 +152,7 @@ prepare() {
 	}
 
 	PROMPT='%{%f%b%k%}$(build_prompt) '
-	RPROMPT=$(prompt_segment white black '[%*]')
+	#RPROMPT=$(prompt_segment white black '[%*]')
 }
 
 prepare
