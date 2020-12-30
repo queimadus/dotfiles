@@ -53,8 +53,8 @@ sshtunnel() {
   ssh -L $1:$2:$3 $4 -N
 }
 
-sshfwd() {
-  ssh -L $1:"localhost":$2 $3 -N
+sshtunnelpublic() {
+  ssh -L 0.0.0.0:$1:$2:$3 $4 -N
 }
 
 ssht() {
