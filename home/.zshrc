@@ -58,3 +58,7 @@ export ANDROID_HOME=/usr/local/Cellar/android-sdk
 export GOPATH=$HOME/go
 
 ulimit -n 10240 12288
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/bruno/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/bruno/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh
