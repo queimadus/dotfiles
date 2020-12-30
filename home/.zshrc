@@ -56,3 +56,5 @@ export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
 
 export ANDROID_HOME=/usr/local/Cellar/android-sdk
 export GOPATH=$HOME/go
+
+ulimit -n 10240 12288
